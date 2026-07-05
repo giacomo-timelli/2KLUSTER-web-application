@@ -28,6 +28,8 @@ The application was designed for a molecular dynamics use case based on NAMD, bu
 
 ## Application workflow
 
+![Job path](job-path.png)
+
 ## Scripts overview
 
 ### `streamlit_app.py`
