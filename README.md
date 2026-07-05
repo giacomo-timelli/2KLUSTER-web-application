@@ -346,6 +346,11 @@ The current version demonstrates the integration between:
 * NAMD CUDA;
 * Mol* visualization.
 
+## Contributors
+
+- [Giacomo Timelli](https://github.com/giacomo-timelli)
+- [Barkin Kemec](https://github.com/mbkemec)
+
 ## License
 
 This project is licensed under the Apache License 2.0. See the `LICENSE` file for details.
