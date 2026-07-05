@@ -28,7 +28,7 @@ The application was designed for a molecular dynamics use case based on NAMD, bu
 
 ## Application workflow
 
-![Job path](job-path.png)
+![Job path](job_path.png)
 
 ## Scripts overview
 
