@@ -1,0 +1,38 @@
+FROM python:3.11-slim
+
+WORKDIR /app
+
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    openssh-client \
+    wget \
+    curl \
+    unzip \
+    ca-certificates \
+    gnupg \
+    oidc-agent \
+    && rm -rf /var/lib/apt/lists/*
+
+# AWS CLI v2
+RUN curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "/tmp/awscliv2.zip" \
+    && unzip /tmp/awscliv2.zip -d /tmp \
+    && /tmp/aws/install \
+    && rm -rf /tmp/aws /tmp/awscliv2.zip
+
+COPY requirements.txt .
+RUN pip install --no-cache-dir -r requirements.txt \
+    && pip install --no-cache-dir pexpect
+
+COPY streamlit_app.py .
+COPY run_namd_workflow.py .
+COPY config.py .
+COPY hpc_client.py .
+COPY login_sts.py .
+COPY slurm_template.py .
+COPY check_auth.py .
+COPY create_oidc_account.py .
+
+RUN chmod +x check_auth.py run_namd_workflow.py
+
+EXPOSE 8501
+
+CMD ["streamlit", "run", "streamlit_app.py", "--server.port=8501", "--server.address=0.0.0.0"]
