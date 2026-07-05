@@ -311,7 +311,7 @@ Some workflow values can be preconfigured as defaults and then adjusted by the u
 
 | Variable | Type | Description | Default / Placeholder |
 | --- | --- | --- | --- |
-| `DEFAULT_CPUS_PER_TASK` | Default parameter | Default number of CPU cores requested for each Slurm task. | `4` |
+| `DEFAULT_CPUS_PER_TASK` | Default parameter | Default number of CPU cores requested for each Slurm task. | `64` |
 | `DEFAULT_GPU_COUNT` | Default parameter | Default number of GPUs requested for the job. | `1` |
 | `DEFAULT_PARTITION` | Default parameter | Default Slurm partition used for job submission. | `<SLURM_PARTITION>` |
 
