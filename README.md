@@ -272,21 +272,6 @@ Some workflow values can be preconfigured as defaults and then adjusted by the u
 | `DEFAULT_GPU_COUNT` | Default parameter | Default number of GPUs requested for the job. | `1` |
 | `DEFAULT_PARTITION` | Default parameter | Default Slurm partition used for job submission. | `<SLURM_PARTITION>` |
 
-## Security notes
-
-This repository contains a public and sanitized version of the application workflow.
-
-Before using it in a real deployment, consider the following aspects:
-
-* do not commit passwords, client secrets, access keys or private SSH keys;
-* mount SSH keys through Kubernetes Secrets or another secure mechanism;
-* rotate exposed or temporary credentials;
-* restrict MinIO policies according to the principle of least privilege;
-* ensure that OIDC tokens are issued by the expected INDIGO-IAM provider;
-* avoid exposing internal infrastructure hostnames in public configuration files;
-* replace placeholder values before deployment;
-* review the STS credential generation component before production usage.
-
 ## Status
 
 This repository is part of an academic Proof-of-Concept and is not intended to be used as a production-ready application without further hardening.
