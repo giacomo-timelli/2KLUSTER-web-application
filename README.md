@@ -185,49 +185,6 @@ MINIO_BUCKET
 REMOTE_BASE_DIR
 ```
 
-## Run locally
-
-A local execution requires the same environment variables expected in the Kubernetes deployment.
-
-Example:
-
-```bash
-export HPC_USER="<HPC_USERNAME>"
-export OIDC_AGENT="<OIDC_AGENT_SHORTNAME>"
-export OIDC_PASSWORD="<OIDC_PASSWORD>"
-
-export BRIDGE_USER="<BRIDGE_USER>"
-export BRIDGE_HOST="<BRIDGE_HOST>"
-export HPC_LOGIN="<HPC_LOGIN_NODE>"
-
-export MINIO_CLIENT_ID="<MINIO_CLIENT_ID>"
-export MINIO_ENDPOINT="<MINIO_ENDPOINT>"
-export MINIO_BUCKET="<MINIO_BUCKET>"
-
-export REMOTE_BASE_DIR="<REMOTE_HPC_BASE_DIR>"
-
-streamlit run streamlit_app.py
-```
-
-For a container-based execution:
-
-```bash
-docker run --rm -p 8501:8501 \
-  -e HPC_USER="<HPC_USERNAME>" \
-  -e OIDC_AGENT="<OIDC_AGENT_SHORTNAME>" \
-  -e OIDC_PASSWORD="<OIDC_PASSWORD>" \
-  -e BRIDGE_USER="<BRIDGE_USER>" \
-  -e BRIDGE_HOST="<BRIDGE_HOST>" \
-  -e HPC_LOGIN="<HPC_LOGIN_NODE>" \
-  -e MINIO_CLIENT_ID="<MINIO_CLIENT_ID>" \
-  -e MINIO_ENDPOINT="<MINIO_ENDPOINT>" \
-  -e MINIO_BUCKET="<MINIO_BUCKET>" \
-  -e REMOTE_BASE_DIR="<REMOTE_HPC_BASE_DIR>" \
-  2kluster-web-application
-```
-
-Depending on the target environment, SSH keys and additional secrets must also be mounted inside the container.
-
 ## Input data
 
 The application expects:
